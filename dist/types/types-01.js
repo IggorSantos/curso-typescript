@@ -21,3 +21,9 @@ function logInfo(uid, name) {
     console.log("O " + name + " tem como id " + uid);
 }
 logInfo(123, "Luis");
+var player = {
+    id: 123,
+    email: "iggor@gmail.com",
+    name: "Iggor",
+    level: 15
+};

@@ -28,3 +28,23 @@ function logInfo(uid: Uid ,name: string){
   console.log(`O ${name} tem como id ${uid}`)
 }
 logInfo(123,"Luis")
+
+//Intersection
+type Account = {
+  id: number;
+  email: string;
+}
+
+type User = {
+  name: string;
+  level: number;
+}
+
+type Player = Account & User
+
+const player: Player = {
+  id: 123,
+  email: "iggor@gmail.com",
+  name: "Iggor",
+  level: 15
+}
