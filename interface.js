@@ -17,3 +17,12 @@ var leftBehind = {
     newContent: ["new caracteres", "more 3 hours"]
 };
 console.log(leftBehind);
+var CreateGame = /** @class */ (function () {
+    function CreateGame(t, d, g, p) {
+        this.title = t;
+        this.description = d;
+        this.genre = g;
+        this.platform = p;
+    }
+    return CreateGame;
+}());

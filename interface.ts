@@ -33,3 +33,17 @@ const leftBehind: DLC = {
 }
 
 console.log(leftBehind)
+
+class CreateGame implements Game {
+  title: string;
+  description: string;
+  genre: string;
+  platform: string[];
+
+  constructor(t: string, d: string, g: string, p: string[]){
+    this.title = t;
+    this.description = d;
+    this.genre = g;
+    this.platform = p;
+  }
+}
