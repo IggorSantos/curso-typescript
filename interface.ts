@@ -3,7 +3,7 @@ interface Game {
   description: string;
   genre: string;
   platform: string[];
-  getSimilarGames: (title: string) => void;
+  getSimilarGames?: (title: string) => void;
 }
 
 const tlou: Game = {
@@ -16,4 +16,20 @@ const tlou: Game = {
   }
 
 }
-tlou.getSimilarGames(tlou.title)
+
+interface DLC extends Game{
+  originalGame: Game,
+  newContent: string[],
+}
+
+//tlou.getSimilarGames(tlou.title)
+const leftBehind: DLC = {
+  title: "The Last Of Us --Left Behind",
+  description: "You play as Ellie before the original game",
+  genre: "Action",
+  platform: ["PS3"],
+  originalGame: tlou,
+  newContent: ["new caracteres","more 3 hours"]
+}
+
+console.log(leftBehind)
