@@ -1,10 +1,42 @@
 "use strict";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var User = /** @class */ (function () {
     function User(name, age) {
         this.name = name;
         this.age = age;
     }
+    User.prototype.logDetails = function () {
+        console.log("O " + this.name + " tem " + this.age + " anos");
+    };
     return User;
 }());
-var will = new User("Willian", 30);
+var Char = /** @class */ (function (_super) {
+    __extends(Char, _super);
+    function Char(name, age, nickname, level) {
+        var _this = _super.call(this, name, age) || this;
+        _this.nickname = nickname;
+        _this.level = level;
+        return _this;
+    }
+    return Char;
+}(User));
+var will = new User("Willian", 40);
 console.log(will);
+will.logDetails();
+var john = new Char("John", 50, "johnmaster", 80);
+console.log(john);
+will.name = "Lucas";

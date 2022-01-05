@@ -26,6 +26,13 @@ var Char = /** @class */ (function (_super) {
         _this.level = level;
         return _this;
     }
+    Object.defineProperty(Char.prototype, "getLevel", {
+        get: function () {
+            return this.level;
+        },
+        enumerable: true,
+        configurable: true
+    });
     return Char;
 }(User));
 var will = new User("Willian", 40);
@@ -33,3 +40,5 @@ console.log(will);
 will.logDetails();
 var john = new Char("John", 50, "johnmaster", 80);
 console.log(john);
+will.name = "Lucas";
+console.log(john.getLevel);
